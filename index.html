@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark Stephen Ucol Personal Website</title>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ---------------- General Body ---------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #facc15, #3b82f6); /* Yellow to Blue */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    color: #1a202c;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* ---------------- Slide Cards ---------------- */
+.slide {
+    padding: 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    display: none;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+    animation: fadeSlide 0.6s ease forwards;
+}
+
+@keyframes fadeSlide {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ---------------- Header ---------------- */
+.slide-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 40%;
+    border: 4px solid #3b82f6;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -5px -5px 15px rgba(255,255,255,0.7);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Headings ---------------- */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+h3 {
+    color: #1e40af;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+p, li {
+    line-height: 1.9;
+    font-weight: 300;
+    font-size: 16px;
+    color: #1a202c;
+}
+
+/* ---------------- Columns ---------------- */
+.two-col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.col {
+    flex: 1 1 300px;
+}
+
+/* ---------------- Bullets ---------------- */
+ul.bullets {
+    padding-left: 20px;
+}
+
+ul.bullets li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* ---------------- Family Photos Slide 3 ---------------- */
+#slide-3 .family-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center 30%;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -5px -5px 15px rgba(255,255,255,0.7);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+#slide-3 .family-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Friends Photos Slide 4 ---------------- */
+#slide-4 .friend-photo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -5px -5px 15px rgba(255,255,255,0.7);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+#slide-4 .friend-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Hobby Photos Slide 5 ---------------- */
+#slide-5 .hobby-photo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -5px -5px 15px rgba(255,255,255,0.7);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+#slide-5 .hobby-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Buttons ---------------- */
+button {
+    background: linear-gradient(90deg,#facc15,#3b82f6);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.4s;
+}
+
+button:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    background: linear-gradient(90deg,#3b82f6,#facc15);
+}
+
+/* ---------------- Dot Navigation ---------------- */
+.dot-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #d1d5db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: #3b82f6;
+    transform: scale(1.4);
+    box-shadow: 0 0 8px #3b82f6;
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 700px) {
+    .slide-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .two-col {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Student Profile -->
+<section class="slide active" id="slide-1">
+    <div class="slide-header">
+        <img src="Messenger_creation_8234AD42-67DA-473A-8E73-291BED9D52A1.jpeg" alt="Clark Stephen Ucol photo" class="photo">
+        <div>
+            <h2><i class="fas fa-user icon"></i>Clark Stephen Ucol</h2>
+            <p class="lead"><i class="fas fa-birthday-cake icon"></i>Age: 18 • BSCS 1-H • KOLEHIYO NG LUNGSOD NG LIPA</p>
+        </div>
+    </div>
+    
+    <!-- Short Introduction Section -->
+    <div style="margin-top:25px;">
+        <h3><i class="fas fa-info-circle icon"></i>Short Introduction</h3>
+        <p>
+            Hi! I’m Clark Stephen Ucol, a BSCS student who loves exploring technology, learning new skills, and sharing experiences.
+            I enjoy collaborating with peers and making the most of every opportunity to grow academically and personally.
+        </p>
+    </div>
+</section>
+<!-- Slide 2: Detailed Information -->
+<section class="slide" id="slide-2">
+    <h2><i class="fas fa-info icon"></i>Detailed Information</h2>
+    <div class="two-col">
+        <div class="col">
+            <h3><i class="fas fa-user icon"></i>Personal Details</h3>
+            <ul class="bullets">
+                <li><strong>Birthday:</strong> April 16, 2007</li>
+                <li><strong>Location:</strong> Palsara, Balete, Batangas</li>
+            </ul>
+            <h3><i class="fas fa-trophy icon"></i>Achievements</h3>
+            <ul class="bullets">
+                <li>With honor (2nd semester SHS)</li>
+                <li>First runner-up in Basketball</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3><i class="fas fa-graduation-cap icon"></i>Academic Background</h3>
+            <ul class="bullets">
+                <li>Kinder: Palsara Kindergarten graduate (2025)</li>
+                <li>Elementary: Palsara Elementary School graduate (2025)</li>
+                <li>HS: Balete National High School graduate (2025)</li>
+                <li>SHS: Primitivo Kalaw Senior High School (2024-2025)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Family Members -->
+<section class="slide" id="slide-3">
+    <h2>Family Members</h2>
+    <ul class="bullets">
+        <li><strong>Father:</strong> Arnel A. Ucol</li>
+        <li><strong>Sister:</strong> Aliah A. Ucol</li>
+        <li><strong>Sister:</strong> Eunisse Bermejo</li>
+    </ul>
+    <h3>Family Photos</h3>
+    <div class="two-col" style="justify-content:center; gap:25px; margin-top:10px;">
+        <img src="Messenger_creation_70D25018-C4CA-41EC-8E7F-AD60DA9C6BD8.jpeg" alt="Family 1" class="family-photo">
+        <img src="Messenger_creation_385592EB-4315-4B70-AC3B-22C12475AFEF.jpeg" alt="Family 2" class="family-photo">
+        <img src="Messenger_creation_D9CB043B-E8CA-42B8-98C6-41B00D555522.jpeg" alt="Family 3" class="family-photo">
+    </div>
+    <h3>Short Description</h3>
+    <ul class="bullets">
+        <li>We are happy as a family, always helping each other and living a good life together.</li>
+    </ul>
+</section>
+
+<!-- Slide 4: Friends -->
+<section class="slide" id="slide-4">
+    <h2>Friends and Co-Workers</h2>
+    <h3>Photos</h3>
+    <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:20px;">
+        <img src="Messenger_creation_389B3FF6-1E07-4EBB-8F1B-80E3B4B5F9F5.jpeg" alt="Friend" class="friend-photo">
+    </div>
+    <h3>Short Description</h3>
+    <ul class="bullets">
+        <li>These friends are kind and always there for fun and activities in college. We enjoy spending time together.</li>
+    </ul>
+</section>
+
+<!-- Slide 5: Hobbies -->
+<section class="slide" id="slide-5">
+    <h2><i class="fas fa-heart icon"></i>Hobbies and Activities</h2>
+    <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px; margin-top:10px;">
+        <img src="Messenger_creation_12455A74-7E7C-462D-9E27-553ED3FFA9DA.jpeg" alt="Laptop" class="hobby-photo">
+        <img src="Messenger_creation_A2A1C276-D27F-473A-BF12-BFD8AADA5422.png" alt="Online Game" class="hobby-photo">
+        <img src="Messenger_creation_CEF5F232-EA7E-479E-BA7D-BB768B0CC056.png" alt="Basketball" class="hobby-photo">
+    </div>
+    <h3>Descriptions</h3>
+    <ul class="bullets">
+        <li><strong>Laptop:</strong> Used for studying and exploring technology, improving skills and knowledge.</li>
+        <li><strong>Online Games:</strong> A hobby that keeps me entertained, relaxed, and happy.</li>
+        <li><strong>Basketball:</strong> Helps relieve stress, stay active, and enjoy leisure time.</li>
+    </ul>
+</section>
+
+<!-- Slide 6: Contact Details -->
+<section class="slide" id="slide-6">
+    <h2><i class="fas fa-address-book icon"></i>Contact Details</h2>
+    <ul class="bullets">
+        <li><i class="fas fa-envelope icon"></i><strong>Email:</strong> <a href="mailto:clarkstephenucol@gmail.com">clarkstephenucol@gmail.com</a></li>
+        <li><i class="fas fa-phone icon"></i><strong>Phone:</strong> <a href="tel:09301757962">09301757962</a></li>
+        <li><i class="fab fa-facebook icon"></i><a href="https://www.facebook.com/share/1KdVPywZp8/" target="_blank"> Facebook</a></li>
+        <li><i class="fab fa-instagram icon"></i><a href="https://www.instagram.com/clarkstephenucol?igsh=MW85czExaGE2Zjl4YQ==" target="_blank"> Instagram</a></li>
+    </ul>
+</section>
+
+<!-- Navigation Buttons -->
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="prevSlide()" aria-label="Return"><i class="fas fa-arrow-left icon"></i> Return</button>
+  <button onclick="nextSlide()" aria-label="Continue">Continue <i class="fas fa-arrow-right icon"></i></button>
+</div>
+
+<!-- Dot Navigation -->
+<div class="dot-nav" role="navigation" aria-label="Slide Navigation">
+  <span class="dot" onclick="goToSlide(0)" aria-label="Slide 1"></span>
+  <span class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></span>
+  <span class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></span>
+  <span class="dot" onclick="goToSlide(3)" aria-label="Slide 4"></span>
+  <span class="dot" onclick="goToSlide(4)" aria-label="Slide 5"></span>
+  <span class="dot" onclick="goToSlide(5)" aria-label="Slide 6"></span>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function updateDots() {
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+}
+
+function showSlide(index) {
+    slides.forEach((slide, i) => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+    updateDots();
+}
+
+showSlide(currentSlide);
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+</script>
+</body>
+</html>
