@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axell De Castro | Personal Website</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, green, red);
+    background-size: 400% 400%;
+    animation: bgAnimation 12s ease infinite;
+}
+.container { width: 90%; max-width: 900px; }
+.slides-wrapper { position: relative; }
+.slide {
+    display: none;
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    background: #fff; 
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    animation: fadeIn 0.8s ease-in-out;
+}
+.slide.active { display: block; }
+h1 { margin-bottom: 20px; color: #222; }
+h3 { margin-bottom: 12px; color: #444; }
+p, li { color: #555; line-height: 1.7; }
+ul { list-style: disc; padding-left: 20px; margin-bottom: 20px; }
+.two-col { display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 25px; }
+.col { flex: 1 1 40%; margin: 10px; text-align: left; }
+.one-col { margin-top: 25px; text-align: left; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-top: 20px; justify-items: center; }
+.grid figure { margin: 0; text-align: center; }
+.grid img { width: 100%; border-radius: 15px; border: 2px solid #333; transition: transform 0.3s, box-shadow 0.3s; }
+.grid img:hover { transform: scale(1.08); box-shadow: 0 0 25px rgba(0,255,0,0.5), 0 0 25px rgba(255,0,0,0.5); }
+.grid figcaption { margin-top: 8px; font-weight: 600; color: #333; }
+.carousel-controls { margin-top: 30px; text-align: center; }
+.carousel-controls button {
+    padding: 12px 30px;
+    margin: 0 12px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1em;
+    background: #333;
+    color: #fff;
+    transition: 0.4s;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.carousel-controls button:hover {
+    background: #555;
+    box-shadow: 0 0 20px rgba(0,255,0,0.6), 0 0 25px rgba(255,0,0,0.5);
+}
+a { color: #0077cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes bgAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+@media(max-width:600px) {
+    .two-col { flex-direction: column; }
+    .col { flex: 1 1 100%; margin-bottom: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="slides-wrapper">
+
+        <!-- Slide 1: Profile -->
+        <div class="slide active">
+            <div class="slide-content">
+                <img src="Messenger_creation_C31464ED-FD2C-41D3-A2C8-65D5FB9AAC2C.jpeg" 
+                     alt="Axell De Castro" 
+                     style="width:180px; height:180px; border-radius:50%; object-fit:cover; border: 3px solid #333; box-shadow:0 5px 15px rgba(0,0,0,0.2); margin-bottom:20px;">
+                <h1>AXELL DE CASTRO</h1>
+                <p>Age: 18 • BS Computer Science 1-H • Kolehiyo ng Lungsod ng Lipa</p>
+                <p><i class="fas fa-envelope"></i> Hi! I’m Axell. I love coding, cooking, and exploring new things. Welcome to my personal website!</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Detailed Information -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1><i class="fas fa-user-circle"></i> DETAILED INFORMATION</h1>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Personal Details</h3>
+                        <ul>
+                            <li>Born: Calapan City, Oriental Mindoro</li>
+                            <li>Birthday: August 13, 2007 (18 y/o)</li>
+                            <li>Location: Bulacnin, Purok 3, Lipa City</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Achievements</h3>
+                        <ul>
+                            <li>No failing grades in all levels</li>
+                            <li>Grade 7 3rd Quarter With Honor</li>
+                            <li>Active in school activities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="one-col">
+                    <h3>Academic Background</h3>
+                    <ul>
+                        <li>Lalud Kindergarten School – 2012</li>
+                        <li>San Aquilino Elementary School – 2018</li>
+                        <li>Bulacnin Integrated National High School – 2022</li>
+                        <li>Bulacnin Integrated National Senior High School – 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<!-- Slide 3: Family -->
+<div class="slide">
+    <div class="slide-content">
+        <h1><i class="fas fa-home"></i> MY FAMILY</h1>
+        <div class="grid">
+            <img src="Messenger_creation_1C47D234-C168-4B6E-8708-35F692C603DF.jpeg" alt="Ronald">
+            <img src="Messenger_creation_5DFD2FEC-1B5D-46B0-AD5E-4E5BD72125DA.jpeg" alt="Jonnalyn">
+            <img src="Messenger_creation_E2E5EFAB-33E8-4A91-BF14-5129A7856609.jpeg" alt="Neil & Shanaia">
+        </div>
+        <div class="one-col">
+            <ul>
+                <li>Father: Ronald De Castro</li>
+                <li>Mother: Jonnalyn De Castro</li>
+                <li>Brother: Neil Jexter De Castro</li>
+                <li>Sister: Shanaia De Castro</li>
+            </ul>
+            <p>We’re a close-knit family we never miss going to church together and love eating out on weekends. We always make time to be complete and have fun as one!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Friends -->
+<div class="slide">
+    <div class="slide-content">
+        <h1><i class="fas fa-users"></i> MY FRIENDS</h1>
+        <div class="grid">
+            <img src="Messenger_creation_13515B5E-D5C6-4BF5-90AB-19E7C58FF601.jpeg" alt="Friend 1">
+            <img src="Messenger_creation_19DB62D6-6AE8-4BB7-BE62-CC25C04893C8.jpeg" alt="Friend 2">
+            <img src="Messenger_creation_8CED7E6D-3733-47F4-AD06-5F0061C38308.jpeg" alt="Friend 3">
+        </div>
+        <div class="one-col">
+            <ul>
+                
+            </ul>
+            <p>My friends are my second family they’re always there through good and bad times. They make me laugh and brighten my day, even on busy school days. I’m so grateful for them!</p>
+        </div>
+    </div>
+</div>
+        <!-- Slide 5: Hobbies -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1><i class="fas fa-heart"></i> HOBBIES</h1>
+                <div class="grid">
+                    <figure>
+                        <img src="Messenger_creation_6B7628A0-0C9F-4539-ABBB-2624E3BFCB4A.jpeg" alt="Cooking">
+                        <figcaption>Cooking</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Messenger_creation_C58423C8-B020-48AA-86AB-F987135FC401.jpeg" alt="Mobile Legends">
+                        <figcaption>Mobile Legends</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Messenger_creation_83CD67C5-9749-4754-B955-425B67B80CFC.png" alt="Wattpad">
+                        <figcaption>Reading Wattpad</figcaption>
+                    </figure>
+                </div>
+                <div class="one-col">
+                    <p><strong>Cooking:</strong> I love trying new recipes from simple snacks to full meals. It’s fun mixing ingredients and making something delicious!</p>
+                    <p><strong>Mobile Legends:</strong> I enjoy playing with friends during free time it’s a great way to unwind and bond.</p>
+                    <p><strong>Reading Wattpad:</strong> I’m into romance and fantasy stories they let me escape to different worlds and spark my imagination.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Contact -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1><i class="fas fa-address-book"></i> CONTACT ME</h1>
+                <div class="one-col">
+                    <p><strong>Email:</strong> axelldecastro99@gmail.com</p>
+                    <p><strong>Phone:</strong> 09706010789</p>
+                    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1GuZFhiszu/" target="_blank">Link</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/who_s_xell?igsh=bWRjYTk1c3VoNHh3" target="_blank">Link</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <div class="carousel-controls">
+        <button id="prev"><i class="fas fa-chevron-left"></i> Previous</button>
+        <button id="next">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+document.getElementById('next').addEventListener('click', () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+});
+document.getElementById('prev').addEventListener('click', () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+});
+</script>
+</body>
+</html>
